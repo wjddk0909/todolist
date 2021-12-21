@@ -8,8 +8,8 @@ class App extends Component {
     todos: [
       { id: 1, name: 'study😎', count: 0},
       { id: 2, name: 'eat😎', count: 0},
-      { id: 3, name: 'play😎', count: 0},
-      { id: 4, name: 'sleep😎', count: 0}
+      { id: 3, name: 'play', count: 0},
+      { id: 4, name: 'sleep', count: 0}
     ]
   }
 
