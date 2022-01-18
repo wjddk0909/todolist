@@ -4,6 +4,7 @@ import Navbar from "./components/navbar";
 import Todos from "./components/todos";
 
 class App extends Component {
+  // state프로퍼티 안에 할일 목록 넣기
   state = {
     todos: [
       { id: 1, name: 'study😎', count: 0},
