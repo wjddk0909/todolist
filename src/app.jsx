@@ -14,13 +14,17 @@ class App extends Component {
     ]
   }
 
+  // 목록 추가
   handleAdd = name => {
+    // todos를 복사해서 추가후 리렌더링
     const todos = [ ...this.state.todos, {id: Date.now(), name, count: 0} ];
     this.setState({todos});
   }
 
+  // 카운트 더하기
   handleIncrement = todo => {
     const todos = this.state.todos.map(item => {
+      // 기존 배열을 복사해 와서 선택한 목록을 1씩 더하기
       if(item.id === todo.id){
         return {...todo, count: todo.count + 1};
       }
@@ -29,22 +33,27 @@ class App extends Component {
     this.setState({todos});
   }
 
+  // 카운트 빼기
   handleDecrement = todo => {
     const todos = this.state.todos.map(item => {
+      // 기존 배열을 복사해 와서 선택한 목록을 1씩 빼기
       if(item.id === todo.id){
         const count = todo.count - 1;
-        return {...todo, count: count < 0 ? 0 : count};
+        return {...todo, count: count < 0 ? 0 : count}; // 0이하로는 내려가지 않도록
       }
       return item;
     });
     this.setState({todos});
   }
 
+  // 목록 삭제
   handleDelete = todo => {
+    // 선택한 목록을 제외한 부분을 필터링해서 새 배열에 넣어줌
     const todos = this.state.todos.filter(item => item.id != todo.id);
     this.setState({todos});
   }
 
+  // 목록 리셋
   handleReset = () => {
     const todos = this.state.todos.map(todo => {
       todo.count = 0;

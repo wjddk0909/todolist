@@ -15,6 +15,7 @@ class Todo extends Component {
     }
 
     render(){
+        // Todos에서 넘어온 할일 목록을 받아서 name과 count에 할당
         const { name, count } = this.props.todo;
         return (
             <li className="todo">
